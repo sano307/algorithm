@@ -4,19 +4,28 @@ import java.util.*;
 public class Coin {
     public static void main(String[] args) {
 
-        int n = 10;
-        int k = 4200;
+        /**
+         * - Input
+         * 10 4200
+         * 1
+         * 5
+         * 50
+         * 100
+         * 500
+         * 1000
+         * 5000
+         * 10000
+         * 50000
+         */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+
         Stack<Integer> stack = new Stack<>();
-        stack.push(1);
-        stack.push(5);
-        stack.push(10);
-        stack.push(50);
-        stack.push(100);
-        stack.push(500);
-        stack.push(1000);
-        stack.push(5000);
-        stack.push(10000);
-        stack.push(50000);
+        while (sc.hasNextInt()) {
+            stack.push(sc.nextInt());
+        }
+        sc.close();
 
         int answer = 0;
         while (!stack.empty()) {
@@ -35,5 +44,9 @@ public class Coin {
         }
 
         System.out.println(answer);
+        /**
+         * - Output
+         * 6
+         */
     }
 }
